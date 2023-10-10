@@ -57,7 +57,7 @@ class Scene {
 const scene = new Scene();
 
 starfield();
-octo();
+// octo();
 const wrapper = document.querySelector('.sceneWrapper');
 const near = document.querySelector('.cardsCube__card--near')
 const button = document.querySelector('.button');
@@ -65,7 +65,7 @@ const button = document.querySelector('.button');
 const unblock = () => {
   wrapper.addEventListener('mousemove', mouseMove, false);
   button.classList.add('button__active');
-  button.textContent = "click to lock";
+  button.textContent = "CLICK TO LOCK";
   button.parentElement.classList.remove('btn');
   near.classList.remove('active');
 }
@@ -73,7 +73,7 @@ const unblock = () => {
 const block = () => {
   wrapper.removeEventListener('mousemove', mouseMove, false);
   button.classList.remove('button__active');
-  button.textContent = "click to unlock";
+  button.textContent = "CLICK TO UNLOCK";
   button.parentElement.classList.add('btn');
   near.classList.add('active');
 }
