@@ -66,7 +66,7 @@ svg {
   display: block;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, #fff 0%, rgb(129, 0, 0) 45%, #000 73%);
+  background: radial-gradient(circle at center, #fff 0%, rgb(129, 0, 0) 45%, #000 98%);
   border-radius: 50%;
   color: black;
   cursor: pointer;
@@ -143,11 +143,13 @@ svg {
   width: 100%;
   height: 100%;
   top: 0;
+
 }
 
 .svg__star {
-  fill: #b022cc80;
+  fill: #22c6cc80;
   stroke: #fffb00;
+
 }
 
 .cardsCube {
@@ -161,6 +163,7 @@ svg {
   transform-style: preserve-3d;
   -webkit-transform: rotateY(0deg) rotateX(0deg) perspective(600px);
   transform: rotateY(0deg) rotateX(0deg) perspective(600px);
+  
 }
 
 .cardsCube__card {
@@ -170,7 +173,6 @@ svg {
   top: 0;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  border: 2px solid #fffb00;
 }
 
 .cardsCube__card--far {
@@ -211,13 +213,14 @@ svg {
   width: 100%;
   height: 100%;
   top: 0;
+
 }
 
 .cardsCube__card::after {
   -webkit-animation: rotateAnim1 13s linear infinite;
   animation: rotateAnim1 13s linear infinite;
-  background: #00aeff8f;
-  border-radius: 25%;
+  background: #32728f;
+  border-radius: 50%;
 }
 
 .cardsCube__card--near.active::after {
@@ -233,6 +236,7 @@ svg {
   height: 100%;
   top: 0;
   border-radius: 1vw;
+  transform: rotate(0deg);
   background: radial-gradient(ellipse at center, #f85032 0%, #f0e15d 38%, rgba(245, 234, 143, 0) 57%, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -298,15 +302,14 @@ svg {
   -ms-flex-align: center;
   align-items: center;
   border-radius: 50%;
-  border: 2px solid #00214d7e;
   -webkit-transform: translateZ(3.25vw);
   transform: translateZ(3.25vw);
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
 
-.layers__layer--second::before,
-.layers__layer--second::after {
+
+.layers__layer--second::before {
   content: "";
   display: block;
   position: absolute;
@@ -314,9 +317,6 @@ svg {
   height: 100%;
   top: 0;
   border-radius: 50%;
-}
-
-.layers__layer--second::before {
   -webkit-transform: translateZ(0vw);
   transform: translateZ(0vw);
   border: 2px solid #80bbff;
@@ -324,11 +324,6 @@ svg {
   animation: moveAnim 1s ease-in-out infinite alternate;
 }
 
-.layers__layer--second::after {
-  -webkit-transform: translateZ(3vw);
-  transform: translateZ(3vw);
-  border: 2px solid #00214d7e;
-}
 
 @-webkit-keyframes rotateAnim1 {
   0% {
