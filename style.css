@@ -63,7 +63,6 @@ svg {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
 .button__active {
   background: rgba(255, 0, 0, 0.133);
   color: #d12828;
@@ -123,13 +122,11 @@ svg {
   width: 100%;
   height: 100%;
   top: 0;
-
 }
 
 .svg__star {
   fill: #a9ecec3d;
   stroke: #c9c6e5;
-
 }
 
 .cardsCube {
@@ -140,7 +137,6 @@ svg {
   border-radius: 1vw;
   transform-style: preserve-3d;
   transform: rotateY(0deg) rotateX(0deg) perspective(600px);
-  
 }
 
 .cardsCube__card {
