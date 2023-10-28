@@ -90,7 +90,6 @@ svg {
   width: 100%;
   height: 100%;
   top: 0;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(19, 39, 62, 0)), to(#a7cfdf80));
   background-image: linear-gradient(to top, rgba(19, 39, 62, 0) 0%, #a7cfdf80 100%);
 }
 
@@ -105,7 +104,6 @@ svg {
   width: 100%;
   height: 100%;
   top: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#13263d00), to(#a7cfdf80));
   background-image: linear-gradient(to bottom, #13263d00 0%, #a7cfdf80 100%);
 }
 
@@ -125,8 +123,17 @@ svg {
 }
 
 .svg__star {
-  fill: #a9ecec3d;
-  stroke: #c9c6e5;
+  fill: #79abc295;
+  stroke: #79abc2;
+}
+.clipper {
+  position: absolute;
+  width: 16vw;
+  height:16vw;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  background: radial-gradient(ellipse at center, #f85032 0%, #f0e15d 38%, rgba(245, 235, 143, 0) 57%, rgba(255, 255, 255, 0) 100%);
+  transform: rotateY(0deg) rotateX(0deg) perspective(600px);
 }
 
 .cardsCube {
@@ -134,9 +141,9 @@ svg {
   width: 13vw;
   height: 13vw;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  border-radius: 1vw;
   transform-style: preserve-3d;
   transform: rotateY(0deg) rotateX(0deg) perspective(600px);
+
 }
 
 .cardsCube__card {
@@ -145,6 +152,7 @@ svg {
   height: 100%;
   top: 0;
   transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
 
 .cardsCube__card--far {
@@ -160,7 +168,6 @@ svg {
 }
 
 .cardsCube__card--left {
-  -webkit-transform: rotateX(0deg) rotateY(-90deg) translateZ(6.5vw);
   transform: rotateX(0deg) rotateY(-90deg) translateZ(6.5vw);
 }
 
@@ -192,27 +199,6 @@ svg {
 
 .cardsCube__card--near.active::after {
   display: none;
-}
-
-.cardsCube::before,
-.cardsCube::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  border-radius: 1vw;
-  transform: rotate(0deg);
-  background: radial-gradient(ellipse at center, #f85032 0%, #f0e15d 38%, rgba(245, 234, 143, 0) 57%, rgba(255, 255, 255, 0) 100%);
-}
-
-.cardsCube::before {
-  transform: translateZ(0) rotateY(90deg);
-}
-
-.cardsCube::after {
-  transform: translateZ(0) rotateX(90deg);
 }
 
 .layers {

@@ -2,6 +2,7 @@ class Scene {
 
   constructor() {
     this.cube = document.querySelector('.cardsCube');
+    this.clipper = document.querySelector('.clipper');
     this.bottom = document.body.querySelector('.lines__bottom');
     this.back = document.body.querySelector('.lines__back');
     this.top = document.body.querySelector('.lines__top');
@@ -19,6 +20,9 @@ class Scene {
 
   getCubePos() {
     return `translate(${this.posX}px, ${this.posY}px) ${this.getPersp()} translateZ(${this.posZ}px) rotateY(${this.rotY}deg) rotateX(${this.rotX}deg)`;
+  }
+  getClipperPos() {
+    return `translate(${this.posX}px, ${this.posY}px) ${this.getPersp()} translateZ(${this.posZ}px)`;
   }
 
   getBgcPos(el) {
@@ -46,6 +50,7 @@ class Scene {
   }
 
   update() {
+    this.clipper.style.transform = this.getClipperPos();
     this.cube.style.transform = this.getCubePos();
     this.bottom.style.transform = `${this.getPersp()} ${this.getBgcPos('bottom')} ${this.getWallPos()}`;
     this.top.style.transform = `${this.getPersp()} ${this.getBgcPos('top')} ${this.getWallPos()}`;
@@ -57,7 +62,7 @@ class Scene {
 const scene = new Scene();
 
 starfield();
-// octo();
+
 const wrapper = document.querySelector('.sceneWrapper');
 const near = document.querySelector('.cardsCube__card--near')
 const button = document.querySelector('.button');
