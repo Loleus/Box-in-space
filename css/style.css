@@ -4,23 +4,21 @@
   box-sizing: border-box;
 }
 
+svg {
+  display: none;
+}
+
 body {
   background: #0c1c64;
 }
-
 body::after {
   display: block;
   content: "ONLY FOR PC";
 }
-
 @media (min-width: 1024px) {
   body::after {
     display: none;
   }
-}
-
-svg {
-  display: none;
 }
 
 .sceneWrapper {
@@ -32,121 +30,87 @@ svg {
   height: 100vh;
   overflow: hidden;
 }
-
 @media (max-width: 1023px) {
   .sceneWrapper {
     display: none;
   }
 }
-
-.starfield {
+.sceneWrapper .starfield {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   background: none;
 }
-
-.button {
-  text-align: center;
-  line-height: 11vw;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: conic-gradient(from 90deg at 50% 50%, #474daacc 0%, #171e51cc 51%, #474daacc 100%);
-  border-radius: 50%;
-  color: black;
-  cursor: pointer;
-  font-size: 1em;
-  color: #59c931;
-  text-shadow: 1px 1px 4px black;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.button__active {
-  background: rgba(255, 0, 0, 0.133);
-  color: #d12828;
-}
-
-.lines {
+.sceneWrapper .lines {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  background-image: linear-gradient(90deg, #00000080 25%, #2d5f81 25%, #2d5f81 50%, #00000080 50%, #00000080 75%, #2d5f81 75%, #2d5f81 100%);
-  background-size: 350.00px 350.00px;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5019607843) 25%, #2d5f81 25%, #2d5f81 50%, rgba(0, 0, 0, 0.5019607843) 50%, rgba(0, 0, 0, 0.5019607843) 75%, #2d5f81 75%, #2d5f81 100%);
+  background-size: 350px 350px;
   height: 100%;
   width: 250%;
 }
-
-.lines__bottom {
+.sceneWrapper .lines__bottom {
   transform: perspective(600px) rotateX(-90deg) translateZ(50vh);
 }
-
-.lines__bottom::before {
+.sceneWrapper .lines__bottom::before {
   content: "";
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  background-image: linear-gradient(to top, rgba(19, 39, 62, 0) 0%, #a7cfdf80 100%);
+  background-image: linear-gradient(to top, rgba(19, 39, 62, 0) 0%, rgba(167, 207, 223, 0.5019607843) 100%);
 }
-
-.lines__top {
+.sceneWrapper .lines__top {
   transform: perspective(600px) rotateX(90deg) translateZ(50vh);
 }
-
-.lines__top::before {
+.sceneWrapper .lines__top::before {
   content: "";
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-  background-image: linear-gradient(to bottom, #13263d00 0%, #a7cfdf80 100%);
+  background-image: linear-gradient(to bottom, rgba(19, 38, 61, 0) 0%, rgba(167, 207, 223, 0.5019607843) 100%);
 }
-
-.lines__back {
+.sceneWrapper .lines__back {
   transform: perspective(600px) rotateX(0deg) translateZ(-50vh);
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.svg {
+.sceneWrapper .svg {
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
 }
-
-.svg__star {
-  fill: #79abc295;
+.sceneWrapper .svg__star {
+  fill: rgba(121, 171, 194, 0.5843137255);
   stroke: #79abc2;
 }
-.clipper {
+.sceneWrapper .clipper {
   position: absolute;
   width: 16vw;
-  height:16vw;
+  height: 16vw;
   border-radius: 50%;
   transform-style: preserve-3d;
   background: radial-gradient(ellipse at center, #f85032 0%, #f0e15d 38%, rgba(245, 235, 143, 0) 57%, rgba(255, 255, 255, 0) 100%);
   transform: rotateY(0deg) rotateX(0deg) perspective(600px);
 }
-
-.cardsCube {
+.sceneWrapper .cardsCube {
   position: relative;
   width: 13vw;
   height: 13vw;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   transform-style: preserve-3d;
   transform: rotateY(0deg) rotateX(0deg) perspective(600px);
-
 }
-
-.cardsCube__card {
+.sceneWrapper .cardsCube__card {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -154,85 +118,88 @@ svg {
   transform-style: preserve-3d;
   backface-visibility: hidden;
 }
-
-.cardsCube__card--far {
+.sceneWrapper .cardsCube__card--far {
   transform: rotateX(0deg) rotateY(180deg) translateZ(6.5vw);
 }
-
-.cardsCube__card--near {
+.sceneWrapper .cardsCube__card--near {
   transform: rotateX(0deg) rotateY(0deg) translateZ(6.5vw);
 }
-
-.cardsCube__card--right {
+.sceneWrapper .cardsCube__card--right {
   transform: rotateX(0deg) rotateY(90deg) translateZ(6.5vw);
 }
-
-.cardsCube__card--left {
+.sceneWrapper .cardsCube__card--left {
   transform: rotateX(0deg) rotateY(-90deg) translateZ(6.5vw);
 }
-
-.cardsCube__card--bottom {
+.sceneWrapper .cardsCube__card--bottom {
   transform: rotateX(-90deg) rotateY(0deg) translateZ(6.5vw);
 }
-
-.cardsCube__card--top {
+.sceneWrapper .cardsCube__card--top {
   transform: rotateX(90deg) rotateY(0deg) translateZ(6.5vw);
 }
-
-.cardsCube__card::before,
-.cardsCube__card::after {
+.sceneWrapper .cardsCube__card::before, .sceneWrapper .cardsCube__card::after {
   content: "";
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
-
 }
-
-.cardsCube__card::after {
+.sceneWrapper .cardsCube__card::after {
   animation: rotateAnim1 13s linear infinite;
-  background: #a3bbe55f;
+  background: rgba(163, 187, 229, 0.3725490196);
   border-radius: 50%;
-  border: 2px solid #bcc9ef7c;
+  border: 2px solid rgba(188, 201, 239, 0.4862745098);
 }
-
-.cardsCube__card--near.active::after {
+.sceneWrapper .cardsCube__card--near.active::after {
   display: none;
 }
-
-.layers {
+.sceneWrapper .cardsCube__card .layers {
   display: flex;
   transform-style: preserve-3d;
   width: 100%;
   height: 100%;
 }
-
-.layers__layer {
+.sceneWrapper .cardsCube__card .layers__layer {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
 }
-
-.layers__layer--first {
+.sceneWrapper .cardsCube__card .layers__layer--first {
   align-self: center;
   position: relative;
   border-radius: 50%;
   width: 11vw;
   height: 11vw;
   margin: 0 auto;
-  transition: transform .3s ease-out;
+  transition: transform 0.3s ease-out;
   transform: translateZ(6.5vw);
   overflow: hidden;
 }
-
-.layers__layer--first.btn {
+.sceneWrapper .cardsCube__card .layers__layer--first .btn {
   border: none;
   transform: translateZ(11vw);
 }
-
-.layers__layer--second {
+.sceneWrapper .cardsCube__card .layers__layer--first .button {
+  text-align: center;
+  line-height: 11vw;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(from 90deg at 50% 50%, rgba(71, 77, 170, 0.8) 0%, rgba(23, 30, 81, 0.8) 51%, rgba(71, 77, 170, 0.8) 100%);
+  border-radius: 50%;
+  color: black;
+  cursor: pointer;
+  font-size: 1em;
+  color: #59c931;
+  text-shadow: 1px 1px 4px black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.sceneWrapper .cardsCube__card .layers__layer--first .button__active {
+  background: rgba(255, 0, 0, 0.133);
+  color: #d12828;
+}
+.sceneWrapper .cardsCube__card .layers__layer--second {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -240,9 +207,7 @@ svg {
   transform: translateZ(3.25vw);
   transform-style: preserve-3d;
 }
-
-
-.layers__layer--second::before {
+.sceneWrapper .cardsCube__card .layers__layer--second:before {
   content: "";
   display: block;
   position: absolute;
@@ -254,43 +219,18 @@ svg {
   border: 2px solid #80a0ff;
   animation: moveAnim 1s ease-in-out infinite alternate;
 }
-
-
-@-webkit-keyframes rotateAnim1 {
-  0% {
-    transform: translateZ(10vw) rotateX(0deg) rotateY(-720deg) scale(0.5);
-  }
-
-  100% {
-    transform: translateZ(10vw) rotateX(-360deg) rotateY(720deg) scale(0.5);
-  }
-}
-
 @keyframes rotateAnim1 {
   0% {
     transform: translateZ(10vw) rotateX(0deg) rotateY(-720deg) scale(0.5);
   }
-
   100% {
     transform: translateZ(10vw) rotateX(-360deg) rotateY(720deg) scale(0.5);
   }
 }
-
-@-webkit-keyframes moveAnim {
-  0% {
-    transform: translateZ(0vw);
-  }
-
-  100% {
-    transform: translateZ(3vw);
-  }
-}
-
 @keyframes moveAnim {
   0% {
     transform: translateZ(0vw);
   }
-
   100% {
     transform: translateZ(3vw);
   }
