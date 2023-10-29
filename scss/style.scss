@@ -44,16 +44,11 @@ body {
     }
 
     .starfield {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
+        @include absoluteBefore;
         background: none;
     }
     .lines {
         position: absolute;
-        width: 100%;
-        height: 100%;
         top: 0;
         background-image: linear-gradient(90deg, #00000080 25%, #2d5f81 25%, #2d5f81 50%, #00000080 50%, #00000080 75%, #2d5f81 75%, #2d5f81 100%);
         background-size: 350px 350px;
@@ -82,11 +77,7 @@ body {
     }
 
     .svg {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
+        @include absoluteBefore;
         &__star {
             fill: #79abc295;
             stroke: #79abc2;
@@ -110,10 +101,7 @@ body {
         transform-style: preserve-3d;
         transform: rotateY(0deg) rotateX(0deg) perspective(600px);
         &__card {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
+            @include absoluteBefore;
             transform-style: preserve-3d;
             backface-visibility: hidden;
             &--far {
@@ -136,12 +124,7 @@ body {
             }
             &::before,
             &::after {
-                content: "";
-                display: block;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
+                @include absoluteBefore;
             }
             &::after {
                 animation: rotateAnim1 13s linear infinite;
@@ -158,10 +141,7 @@ body {
                 width: 100%;
                 height: 100%;
                 &__layer {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
+                    @include absoluteBefore;
                     &--first {
                         align-self: center;
                         position: relative;
@@ -184,7 +164,6 @@ body {
                             height: 100%;
                             background: conic-gradient(from 90deg at 50% 50%, #474daacc 0%, #171e51cc 51%, #474daacc 100%);
                             border-radius: 50%;
-                            color: black;
                             cursor: pointer;
                             font-size: 1em;
                             color: #59c931;
@@ -204,12 +183,7 @@ body {
                         transform: translateZ(3.25vw);
                         transform-style: preserve-3d;
                         &:before {
-                            content: "";
-                            display: block;
-                            position: absolute;
-                            width: 100%;
-                            height: 100%;
-                            top: 0;
+                            @include absoluteBefore;
                             border-radius: 50%;
                             transform: translateZ(0vw);
                             border: 2px solid #80a0ff;
@@ -222,16 +196,6 @@ body {
     }
 }
 
-@-webkit-keyframes rotateAnim1 {
-    0% {
-        transform: translateZ(10vw) rotateX(0deg) rotateY(-720deg) scale(0.5);
-    }
-
-    100% {
-        transform: translateZ(10vw) rotateX(-360deg) rotateY(720deg) scale(0.5);
-    }
-}
-
 @keyframes rotateAnim1 {
     0% {
         transform: translateZ(10vw) rotateX(0deg) rotateY(-720deg) scale(0.5);
@@ -239,15 +203,6 @@ body {
 
     100% {
         transform: translateZ(10vw) rotateX(-360deg) rotateY(720deg) scale(0.5);
-    }
-}
-@-webkit-keyframes moveAnim {
-    0% {
-        transform: translateZ(0vw);
-    }
-
-    100% {
-        transform: translateZ(3vw);
     }
 }
 

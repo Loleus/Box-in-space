@@ -36,6 +36,8 @@ body::after {
   }
 }
 .sceneWrapper .starfield {
+  content: "";
+  display: block;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -44,8 +46,6 @@ body::after {
 }
 .sceneWrapper .lines {
   position: absolute;
-  width: 100%;
-  height: 100%;
   top: 0;
   background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5019607843) 25%, #2d5f81 25%, #2d5f81 50%, rgba(0, 0, 0, 0.5019607843) 50%, rgba(0, 0, 0, 0.5019607843) 75%, #2d5f81 75%, #2d5f81 100%);
   background-size: 350px 350px;
@@ -83,6 +83,7 @@ body::after {
   justify-content: center;
 }
 .sceneWrapper .svg {
+  content: "";
   display: block;
   position: absolute;
   width: 100%;
@@ -111,6 +112,8 @@ body::after {
   transform: rotateY(0deg) rotateX(0deg) perspective(600px);
 }
 .sceneWrapper .cardsCube__card {
+  content: "";
+  display: block;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -160,6 +163,8 @@ body::after {
   height: 100%;
 }
 .sceneWrapper .cardsCube__card .layers__layer {
+  content: "";
+  display: block;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -188,7 +193,6 @@ body::after {
   height: 100%;
   background: conic-gradient(from 90deg at 50% 50%, rgba(71, 77, 170, 0.8) 0%, rgba(23, 30, 81, 0.8) 51%, rgba(71, 77, 170, 0.8) 100%);
   border-radius: 50%;
-  color: black;
   cursor: pointer;
   font-size: 1em;
   color: #59c931;
@@ -219,6 +223,7 @@ body::after {
   border: 2px solid #80a0ff;
   animation: moveAnim 1s ease-in-out infinite alternate;
 }
+
 @keyframes rotateAnim1 {
   0% {
     transform: translateZ(10vw) rotateX(0deg) rotateY(-720deg) scale(0.5);
