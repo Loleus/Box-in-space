@@ -45,11 +45,14 @@ body::after {
   background: none;
 }
 .sceneWrapper .lines {
+  content: "";
+  display: block;
   position: absolute;
+  width: 100%;
+  height: 100%;
   top: 0;
   background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.5019607843) 25%, #2d5f81 25%, #2d5f81 50%, rgba(0, 0, 0, 0.5019607843) 50%, rgba(0, 0, 0, 0.5019607843) 75%, #2d5f81 75%, #2d5f81 100%);
   background-size: 350px 350px;
-  height: 100%;
   width: 250%;
 }
 .sceneWrapper .lines__bottom {
@@ -79,8 +82,8 @@ body::after {
 .sceneWrapper .lines__back {
   transform: perspective(600px) rotateX(0deg) translateZ(-50vh);
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 .sceneWrapper .svg {
   content: "";
@@ -181,10 +184,6 @@ body::after {
   transform: translateZ(6.5vw);
   overflow: hidden;
 }
-.sceneWrapper .cardsCube__card .layers__layer--first .btn {
-  border: none;
-  transform: translateZ(11vw);
-}
 .sceneWrapper .cardsCube__card .layers__layer--first .button {
   text-align: center;
   line-height: 11vw;
@@ -202,6 +201,7 @@ body::after {
 .sceneWrapper .cardsCube__card .layers__layer--first .button__active {
   background: rgba(255, 0, 0, 0.133);
   color: #d12828;
+  border: none;
 }
 .sceneWrapper .cardsCube__card .layers__layer--second {
   display: flex;
@@ -211,7 +211,7 @@ body::after {
   transform: translateZ(3.25vw);
   transform-style: preserve-3d;
 }
-.sceneWrapper .cardsCube__card .layers__layer--second:before {
+.sceneWrapper .cardsCube__card .layers__layer--second::before {
   content: "";
   display: block;
   position: absolute;

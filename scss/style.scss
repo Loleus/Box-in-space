@@ -6,6 +6,11 @@
     height: 100%;
     top: 0;
 }
+@mixin flexed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 * {
     padding: 0;
@@ -32,9 +37,7 @@ body {
 
 .sceneWrapper {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexed;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
@@ -48,11 +51,9 @@ body {
         background: none;
     }
     .lines {
-        position: absolute;
-        top: 0;
+        @include absoluteBefore;
         background-image: linear-gradient(90deg, #00000080 25%, #2d5f81 25%, #2d5f81 50%, #00000080 50%, #00000080 75%, #2d5f81 75%, #2d5f81 100%);
         background-size: 350px 350px;
-        height: 100%;
         width: 250%;
         &__bottom {
             transform: perspective(600px) rotateX(-90deg) translateZ(50vh);
@@ -70,9 +71,7 @@ body {
         }
         &__back {
             transform: perspective(600px) rotateX(0deg) translateZ(-50vh);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include flexed;
         }
     }
 
@@ -152,10 +151,6 @@ body {
                         transition: transform 0.3s ease-out;
                         transform: translateZ(6.5vw);
                         overflow: hidden;
-                        .btn {
-                            border: none;
-                            transform: translateZ(11vw);
-                        }
                         .button {
                             text-align: center;
                             line-height: 11vw;
@@ -172,17 +167,16 @@ body {
                             &__active {
                                 background: rgba(255, 0, 0, 0.133);
                                 color: #d12828;
+                                border: none;
                             }
                         }
                     }
                     &--second {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        @include flexed;
                         border-radius: 50%;
                         transform: translateZ(3.25vw);
                         transform-style: preserve-3d;
-                        &:before {
+                        &::before {
                             @include absoluteBefore;
                             border-radius: 50%;
                             transform: translateZ(0vw);
